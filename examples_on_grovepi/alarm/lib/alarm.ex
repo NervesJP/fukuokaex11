@@ -4,7 +4,7 @@ defmodule Alarm do
 
   # Pick ports that work on both the GrovePi+ and GrovePi Zero
   @button_pin 14 # Port A0
-  @buzzer_pin 3  # Port D3
+  @buzzer_pin 2  # Port D2
 
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
