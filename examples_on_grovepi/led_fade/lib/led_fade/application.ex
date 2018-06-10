@@ -3,7 +3,7 @@ defmodule LEDFade.Application do
   use Application
 
   @potentiometer_pin 16 # Port A2
-  @led_pin 2 # Port D2
+  @led_pin 3 # Port D3
 
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
