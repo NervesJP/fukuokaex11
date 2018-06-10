@@ -15,6 +15,6 @@ defmodule DemoRGBLCD.Mixfile do
   end
 
   defp deps do
-    [{:grovepi, github: "adkron/grovepi", tag: "0.5.1"}]
+    [{:grovepi, github: "adkron/grovepi", tag: "v0.5.1"}]
   end
 end
