@@ -16,6 +16,6 @@ defmodule Alarm.Mixfile do
   end
 
   defp deps do
-    [{:grovepi, "~> 0.5.1"}]
+    [{:grovepi, github: "adkron/grovepi", tag: "0.5.1"}]
   end
 end
