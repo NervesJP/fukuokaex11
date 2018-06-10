@@ -54,21 +54,21 @@ $ MIX_ENV=prod mix compile
 - Run
 ```
 $ MIX_ENV=prod iex -S mix
+iex(1)> DemoRGBLCD.autoscroll()
+  - Print and autoscroll 0-9 numbers both ways
+iex(2)> DemoRGBLCD.blink()
+  - Say "Hello World!" and toggles cursor blinking on and off every 3000ms
+iex(3)> DemoRGBLCD.cursor()
+  - Say "Hello World!" and toggles the cursor on and off every 1500ms
+iex(4)> DemoRGBLCD.colors()
+  - Blink backlight to the RBG color
+iex(5)> DemoRGBLCD.display()
+  - Toggles the display on and off every 1500ms
+iex(6)> DemoRGBLCD.text_direction()
+  - Demonstrates text direction both ways
+iex(7)> DemoRGBLCD.set_cursor()
+  - Demonstrates moving the cursor to the second line
 ```
-  - iex(1)> DemoRGBLCD.autoscroll()
-    - Print and autoscroll 0-9 numbers both ways
-  - iex(2)> DemoRGBLCD.blink()
-    - Say "Hello World!" and toggles cursor blinking on and off every 3000ms
-  - iex(3)> DemoRGBLCD.cursor()
-    - Say "Hello World!" and toggles the cursor on and off every 1500ms
-  - iex(4)> DemoRGBLCD.colors()
-    - Blink backlight to the RBG color
-  - iex(5)> DemoRGBLCD.display()
-    - Toggles the display on and off every 1500ms
-  - iex(6)> DemoRGBLCD.text_direction()
-    - Demonstrates text direction both ways
-  - iex(7)> DemoRGBLCD.set_cursor()
-    - Demonstrates moving the cursor to the second line
 
 
 
