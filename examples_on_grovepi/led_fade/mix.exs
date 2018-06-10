@@ -16,6 +16,6 @@ defmodule LEDFade.Mixfile do
   end
 
   defp deps do
-    [{:grovepi, path: "../.."}]
+    [{:grovepi, github: "adkron/grovepi", branch: "master"}]
   end
 end
