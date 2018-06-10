@@ -70,5 +70,8 @@ iex(7)> DemoRGBLCD.set_cursor()
   - Demonstrates moving the cursor to the second line
 ```
 
+## [home_weather_display](./home_weather_display)
+
+This project cannot be built on rpi3 directly since it requires Nerves libs.
 
 
