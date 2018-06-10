@@ -15,6 +15,6 @@ defmodule DemoRGBLCD.Mixfile do
   end
 
   defp deps do
-    [{:grovepi, path: "../.."}]
+    [{:grovepi, "~> 0.5.1"}]
   end
 end
