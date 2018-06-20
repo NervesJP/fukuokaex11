@@ -17,7 +17,7 @@ defmodule DhtSensor do
       worker(DhtSensor.Worker, [@dht_pin]),
     ]
 
-    opts = [strategy: :rest_for_one, name: DhtSensor.Supervisor]
+    opts = [strategy: :one_for_one, name: DhtSensor.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
