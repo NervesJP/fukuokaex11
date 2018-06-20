@@ -24,6 +24,7 @@ defmodule DhtSensor do
   defmodule Worker do
     @moduledoc false
     use GenServer
+    require Logger
 
     defstruct [:dht]
 
@@ -42,8 +43,7 @@ defmodule DhtSensor do
       temp = format_temp(temp)
       humidity = format_humidity(humidity)
 
-      IO.puts temp
-      IO.puts humidity
+      Logger.info temp <> " " <> humidity
 
       {:noreply, state}
     end

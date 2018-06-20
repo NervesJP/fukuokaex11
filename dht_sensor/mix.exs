@@ -1,4 +1,4 @@
-defmodule DhtSensor.MixProject do
+defmodule DhtSensor.Mixfile do
   use Mix.Project
 
   def project do
