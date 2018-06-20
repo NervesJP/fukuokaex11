@@ -17,7 +17,7 @@ defmodule HomeWeatherDisplayHost do
       worker(HomeWeatherDisplayHost.Worker, [@dht_pin]),
     ]
 
-    opts = [strategy: :rest_for_one, name: HomeWeatherDisplay.Supervisor]
+    opts = [strategy: :rest_for_one, name: HomeWeatherDisplayHost.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
