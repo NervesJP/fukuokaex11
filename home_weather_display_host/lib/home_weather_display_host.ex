@@ -3,7 +3,7 @@ defmodule HomeWeatherDisplayHost do
   use Application
 
   # Port on GrovePi+
-  @dht_pin 7 # Use port 7 for the DHT
+  @dht_pin 2 # Use port 7 for the DHT
   @dht_poll_interval 1_000 # poll every 1 second
 
   def start(_type, _args) do
