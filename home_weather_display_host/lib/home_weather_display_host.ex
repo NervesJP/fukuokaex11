@@ -35,8 +35,8 @@ defmodule HomeWeatherDisplayHost do
     def init(dht_pin) do
       state = %Worker{dht: dht_pin}
 
-      RGBLCD.initialize()
-      RGBLCD.set_text("Ready!")
+      GrovePi.RGBLCD.initialize()
+      GrovePi.RGBLCD.set_text("Ready!")
 
       GrovePi.DHT.subscribe(dht_pin, :changed)
       {:ok, state}
@@ -51,9 +51,9 @@ defmodule HomeWeatherDisplayHost do
 
       flash_rgb()
 
-      RGBLCD.set_text(temp)
-      RGBLCD.set_cursor(1, 0)
-      RGBLCD.write_text(humidity)
+      GrovePi.RGBLCD.set_text(temp)
+      GrovePi.RGBLCD.set_cursor(1, 0)
+      GrovePi.RGBLCD.write_text(humidity)
       Logger.info temp <> " " <> humidity
 
       {:noreply, state}
@@ -64,9 +64,9 @@ defmodule HomeWeatherDisplayHost do
     end
 
     defp flash_rgb() do
-      RGBLCD.set_rgb(255, 0, 0)
+      GrovePi.RGBLCD.set_rgb(255, 0, 0)
       Process.sleep(1000)
-      RGBLCD.set_color_white()
+      GrovePi.RGBLCD.set_color_white()
     end
 
     defp format_temp(temp) do
