@@ -34,7 +34,7 @@ defmodule DhtSensor do
     def init(dht_pin) do
       state = %Worker{dht: dht_pin}
 
-      GrovePi.Dht.subscribe(dht_pin, :changed)
+      GrovePi.DHT.subscribe(dht_pin, :changed)
       {:ok, state}
     end
 
