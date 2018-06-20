@@ -16,7 +16,7 @@ defmodule HomeWeatherDisplayHost.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {HomeWeatherDisplayHost.Application, []}
+      mod: {HomeWeatherDisplayHost, []}
     ]
   end
 
