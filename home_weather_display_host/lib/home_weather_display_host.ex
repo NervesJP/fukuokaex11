@@ -42,7 +42,7 @@ defmodule HomeWeatherDisplayHost do
       {:ok, state}
     end
 
-    def handle_info({_pin, :changed, %{temp: temp, humidity: humidity}}, state) do
+    def handle_info({dht_pin, :changed, %{temp: temp, humidity: humidity}}, state) do
       temp = format_temp(temp)
       humidity = format_humidity(humidity)
 
