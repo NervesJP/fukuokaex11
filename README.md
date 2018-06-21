@@ -18,10 +18,21 @@ Elixir/Phoenix projects for [fukuoka.ex#11](https://fukuokaex.connpass.com/event
     - DHT for Port D7
     - LCD for I2C-1
   - Run by `$ iex -S mix`
+- [home_weather_csv](./home_weather_csv)
+  - Write temparature and humidity values to CSV (`dhtdata.csv`)
+    - DHT for Port D7
+    - LCD for I2C-1
+  - Run by `$ iex -S mix`
+
+- [phx_chartjs](./phx_chartjs)
+  - Chart.js example on phoenix
+  - Run by `$ mix phx.server`
+
 
 ## References
 
 - GitHub repository
   - [adkron/grovepi](https://github.com/adkron/grovepi)
 - Qiita article (in Japanese)
+  - T.B.A
 
