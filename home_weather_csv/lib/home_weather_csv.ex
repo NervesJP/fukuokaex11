@@ -19,8 +19,8 @@ defmodule HomeWeatherDisplayCsv do
     RGBLCD.set_text("Ready!")
 
     # Write row headling of CSV
-    File.write "dhtdata.csv", "date,temp,humidity\n"
-    File.write "dhtdata.csv", ""
+    #File.write "../dhtdata.csv", "date,temp,humidity\n"
+    File.write "../dhtdata.csv", ""
 
     DHT.subscribe(dht_pin, :changed)
     {:ok, state}
@@ -33,7 +33,7 @@ defmodule HomeWeatherDisplayCsv do
       |> Timex.format!( "%Y-%m-%d %H:%M:%S", :strftime )
 
     # Write data to CSV
-    File.write "dhtdata.csv", "#{date},#{temp},#{humidity}\n", [:append]
+    File.write "../dhtdata.csv", "#{date},#{temp},#{humidity}\n", [:append]
 
     temp = format_temp(temp)
     humidity = format_humidity(humidity)
