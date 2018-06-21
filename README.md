@@ -23,10 +23,20 @@ Elixir/Phoenix projects for [fukuoka.ex#11](https://fukuokaex.connpass.com/event
     - DHT for Port D7
     - LCD for I2C-1
   - Run by `$ MIX_ENV=prod iex -S mix`
+- [home_weather_phx](./home_weather_phx)
+  - Display temparature and humidity values on **Phoenix Page!!**
+    - DHT for Port D7
+    - LCD for I2C-1
+  - Run by `$ MIX_ENV=dev iex -S mix`
+  - Then, access to `http://<IP>:4000/` to show the DHT value
 
 - [phx_chartjs](./phx_chartjs)
   - Chart.js example on phoenix
+  - Run by `$ mix phx.server`
+- [phx_csvjs](./phx_csvjs)
+  - Display DHT value by Chart.js
   - Run by `$ MIX_ENV=dev mix phx.server`
+    - Also run `home_weather_csv/` on another terminal.
 
 
 ## References
