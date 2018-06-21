@@ -4,16 +4,16 @@ defmodule HomeWeatherPhx do
   use Timex
   require Logger
 
-  defstruct [:dht]
+  defstruct [:dht, :ultrasonic]
 
-  alias GrovePi.{RGBLCD, DHT}
+  alias GrovePi.{RGBLCD, DHT, Ultrasonic}
 
   def start_link(pin) do
     GenServer.start_link(__MODULE__, pin)
   end
 
-  def init(dht_pin) do
-    state = %HomeWeatherPhx{dht: dht_pin}
+  def init([dht_pin, us_pin]) do
+    state = %HomeWeatherPhx{dht: dht_pin, ultrasonic: us_pin}
 
     RGBLCD.initialize()
     RGBLCD.set_text("Ready!")
@@ -26,8 +26,9 @@ defmodule HomeWeatherPhx do
   end
 
   def handle_info({_pin, :changed, %{temp: temp, humidity: humidity}}, state) do
+    # Get distance
+    distance = Ultrasonic.read_distance(us_pin)
     # Get date
-    #date = DateTime.utc_now() |> DateTime.to_string()
     date = Timex.now("Asia/Tokyo")
       |> Timex.format!( "%Y-%m-%d %H:%M:%S", :strftime )
 
