@@ -37,11 +37,13 @@ defmodule HomeWeatherDisplayCsv do
     temp = format_temp(temp)
     humidity = format_humidity(humidity)
 
+    '''
     flash_rgb()
 
     RGBLCD.set_text(temp)
     RGBLCD.set_cursor(1, 0)
     RGBLCD.write_text(humidity)
+    '''
     Logger.info temp <> " " <> humidity
 
     {:noreply, state}
