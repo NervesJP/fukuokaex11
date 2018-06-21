@@ -55,7 +55,7 @@ defmodule HomeWeatherDisplayCsv do
 
   defp flash_rgb() do
     RGBLCD.set_rgb(255, 0, 0)
-    Process.sleep(5000)
+    Process.sleep(1000)
     RGBLCD.set_color_white()
   end
 
