@@ -40,6 +40,15 @@ var csvToArray = function(path) {
   return csvData;
 }
 
+var getDateData = function(date, src) {
+  var dst = new Array();
+  for(var i = 0; i < src.length; i++)
+  if (src[i][0].indexOf(date) !== -1) {
+    dst.push(src[i]);
+  }
+  return dst;
+};
+
 var extractTime = function(src) {
   var dst = new Array();
   for(var i = 0; i < src.length; i++)
@@ -138,19 +147,15 @@ var drawGraph = function(id, today, labels){
 
 window.onload = function () {
   var csvData = csvToArray("dhtdata.csv");
-  var today = "2018-06-21 ";
+  //var today = "2018-06-21 ";
   //var yesterday = "2016-12-11 ";
-  //var today = getDate(0);
+  var today = getDate(0);
   //var yesterday = getDate(-1);
   var dataToday = getDateData(today, csvData);
-  //var dataTime = extractTime(csvData);
-  //var dataTodayT = arrayT(dataTime);
+  var dataTime = extractTime(day, csvData);
   var dataTodayT = arrayT(dataToday);
+  //var dataTodayT = arrayT(dataTime);
   var label = replaceElement(dataTodayT[0], today, ""); // 0:00, 1:00, 2:00
-  //var dataYesterday = getDateData(yesterday, csvData);
-  //var dataYesterdayT = arrayT(dataYesterday);
-  //drawGraph('temperature', dataTodayT[1], dataYesterdayT[1], label);
-  //drawGraph('humidity', dataTodayT[2], dataYesterdayT[2], label);
   drawGraph('temperature', dataTodayT[1], label);
   drawGraph('humidity', dataTodayT[2], label);
 };
