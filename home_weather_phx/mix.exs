@@ -8,6 +8,7 @@ defmodule HomeWeatherPhx.Mixfile do
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
       compilers: [:phoenix, :gettext] ++ Mix.compilers,
+      build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps()
     ]
@@ -19,7 +20,7 @@ defmodule HomeWeatherPhx.Mixfile do
   def application do
     [
       mod: {HomeWeatherPhx.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :timex]
     ]
   end
 
@@ -37,7 +38,9 @@ defmodule HomeWeatherPhx.Mixfile do
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:timex, "~> 3.1"},
+      {:grovepi, github: "adkron/grovepi", branch: "master"}
     ]
   end
 end
