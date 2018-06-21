@@ -16,7 +16,8 @@ defmodule HomeWeatherDisplayCsv do
 
     RGBLCD.initialize()
     RGBLCD.set_text("Ready!")
-    
+
+    # Write row headling of CSV
     File.write "dhtdata.csv", "date,temp,humidity\n"
 
     DHT.subscribe(dht_pin, :changed)
@@ -24,17 +25,19 @@ defmodule HomeWeatherDisplayCsv do
   end
 
   def handle_info({_pin, :changed, %{temp: temp, humidity: humidity}}, state) do
+    # Get date
+    date = DateTime.utc_now() |> DateTime.to_string()
+    # Write data to CSV
+    File.write "dhtdata.csv", "#{date},#{temp},#{humidity}\n", [:append]
+
     temp = format_temp(temp)
     humidity = format_humidity(humidity)
-
-    File.write "dhtdata.csv", "date,#{temp},#{humidity}\n", [:append]
 
     flash_rgb()
 
     RGBLCD.set_text(temp)
     RGBLCD.set_cursor(1, 0)
     RGBLCD.write_text(humidity)
-
     Logger.info temp <> " " <> humidity
 
     {:noreply, state}
