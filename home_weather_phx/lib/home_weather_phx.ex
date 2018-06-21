@@ -73,6 +73,6 @@ defmodule HomeWeatherPhx do
   end
 
   defp format_distance(distance) do
-    "distance: #{Float.to_string(distance)}cm"
+    "distance: #{distance}cm"
   end
 end
