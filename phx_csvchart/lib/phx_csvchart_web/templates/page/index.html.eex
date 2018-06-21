@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='css/style.css' type='text/css'/>
@@ -140,9 +139,9 @@ var drawGraph = function(id, today, labels){
 
 window.onload = function () {
   var csvData = csvToArray("dhtdata.csv");
-  var today = "2018-06-21 ";
+  //var today = "2018-06-21 ";
   //var yesterday = "2016-12-11 ";
-  //var today = getDate(0);
+  var today = getDate(0);
   //var yesterday = getDate(-1);
   var dataToday = getDateData(today, csvData);
   var dataTodayT = arrayT(dataToday);
