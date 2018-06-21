@@ -21,7 +21,7 @@ defmodule HomeWeatherPhx.Application do
       worker(GrovePi.DHT, [@dht_pin, [poll_interval: @dht_poll_interval]]),
 
       # Start the main app
-      worker(HomeWeatherDisplayCsv, [@dht_pin]),
+      worker(HomeWeatherPhx, [@dht_pin]),
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
