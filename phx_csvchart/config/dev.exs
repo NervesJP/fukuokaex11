@@ -33,7 +33,7 @@ config :phx_csvchart, PhxCsvchartWeb.Endpoint,
 config :phx_csvchart, PhxCsvchartWeb.Endpoint,
   live_reload: [
     patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
+      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg|csv)$},
       ~r{priv/gettext/.*(po)$},
       ~r{lib/phx_csvchart_web/views/.*(ex)$},
       ~r{lib/phx_csvchart_web/templates/.*(eex)$}
