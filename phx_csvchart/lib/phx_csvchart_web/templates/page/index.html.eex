@@ -40,7 +40,7 @@ var csvToArray = function(path) {
   return csvData;
 }
 
-var extractTime = function(date, src) {
+var extractTime = function(src) {
   var dst = new Array();
   for(var i = 0; i < src.length; i++)
     dst.push(src[i]);
