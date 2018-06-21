@@ -16,6 +16,10 @@
           <h2>Humidity [％]</h2>
           <canvas id="humidity" class="graph"></canvas>
         </div>
+        <div class="box">
+          <h2>Distance [cm]</h2>
+          <canvas id="distance" class="graph"></canvas>
+        </div>
       </div>
     </div>
   </body>
@@ -147,5 +151,6 @@ window.onload = function () {
   var label = replaceElement(dataTodayT[0], today, ""); // 0:00, 1:00, 2:00
   drawGraph('temperature', dataTodayT[1], label);
   drawGraph('humidity', dataTodayT[2], label);
+  drawGraph('distance', dataTodayT[3], label);
 };
 </script>

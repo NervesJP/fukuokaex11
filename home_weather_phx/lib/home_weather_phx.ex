@@ -15,6 +15,8 @@ defmodule HomeWeatherPhx do
   def init(dht_pin) do
     state = %HomeWeatherPhx{dht: dht_pin}
 
+    {:ok, _pid} = GrovePi.Ultrasonic.start_link(4)
+
     RGBLCD.initialize()
     RGBLCD.set_text("Ready!")
 
@@ -26,13 +28,14 @@ defmodule HomeWeatherPhx do
   end
 
   def handle_info({_pin, :changed, %{temp: temp, humidity: humidity}}, state) do
+    distance = GrovePi.Ultrasonic.read_distance(4)
+    
     # Get date
-    #date = DateTime.utc_now() |> DateTime.to_string()
     date = Timex.now("Asia/Tokyo")
       |> Timex.format!( "%Y-%m-%d %H:%M:%S", :strftime )
 
     # Write data to CSV
-    File.write "priv/static/dhtdata.csv", "#{date},#{temp},#{humidity}\n", [:append]
+    File.write "priv/static/dhtdata.csv", "#{date},#{temp},#{humidity},#{distance}\n", [:append]
 
     temp = format_temp(temp)
     humidity = format_humidity(humidity)
