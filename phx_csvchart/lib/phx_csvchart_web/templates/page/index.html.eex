@@ -1,5 +1,34 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-<canvas id="myChart" width="400" height="400"></canvas>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>TEST</title>
+    <script type="text/javascript" src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="logo">Raspi LO</h1>
+      <div class="nav" id="currentTime"></div>
+      <div class="nav" id="currentTemp"></div>
+      <div class="nav" id="currentHumidity"></div>
+    </div>
+    <div class="wrapper">
+      <div class="main">
+        <div class="box">
+          <h2>Temperature [℃]</h2>
+          <canvas id="temperature" class="graph"></canvas>
+        </div>
+        <div class="box">
+          <h2>Humidity [％]</h2>
+          <canvas id="humidity" class="graph"></canvas>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
 
 <script>
 // CSV to Array 2D
