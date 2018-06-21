@@ -29,6 +29,7 @@ defmodule HomeWeatherPhx do
 
   def handle_info({_pin, :changed, %{temp: temp, humidity: humidity}}, state) do
     distance = GrovePi.Ultrasonic.read_distance(4)
+    distance = if distance == 200, do: 0
     
     # Get date
     date = Timex.now("Asia/Tokyo")
@@ -39,13 +40,14 @@ defmodule HomeWeatherPhx do
 
     temp = format_temp(temp)
     humidity = format_humidity(humidity)
+    distance = format_distance(distance)
 
     flash_rgb()
 
     RGBLCD.set_text(temp)
     RGBLCD.set_cursor(1, 0)
     RGBLCD.write_text(humidity)
-    Logger.info temp <> " " <> humidity
+    Logger.info temp <> " " <> humidity <> "" <> distance
 
     {:noreply, state}
   end
@@ -66,5 +68,9 @@ defmodule HomeWeatherPhx do
 
   defp format_humidity(humidity) do
     "Humidity: #{Float.to_string(humidity)}%"
+  end
+
+  defp format_distance(distance) do
+    "distance: #{Float.to_string(distance)}cm"
   end
 end
