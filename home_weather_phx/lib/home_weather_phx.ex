@@ -4,16 +4,16 @@ defmodule HomeWeatherPhx do
   use Timex
   require Logger
 
-  defstruct [:dht, :ultrasonic]
+  defstruct [:dht]
 
-  alias GrovePi.{RGBLCD, DHT, Ultrasonic}
+  alias GrovePi.{RGBLCD, DHT}
 
   def start_link(pin) do
     GenServer.start_link(__MODULE__, pin)
   end
 
-  def init([dht_pin, us_pin]) do
-    state = %HomeWeatherPhx{dht: dht_pin, ultrasonic: us_pin}
+  def init(dht_pin) do
+    state = %HomeWeatherPhx{dht: dht_pin}
 
     RGBLCD.initialize()
     RGBLCD.set_text("Ready!")
@@ -26,25 +26,23 @@ defmodule HomeWeatherPhx do
   end
 
   def handle_info({_pin, :changed, %{temp: temp, humidity: humidity}}, state) do
-    # Get distance
-    distance = Ultrasonic.read_distance(4)
     # Get date
+    #date = DateTime.utc_now() |> DateTime.to_string()
     date = Timex.now("Asia/Tokyo")
       |> Timex.format!( "%Y-%m-%d %H:%M:%S", :strftime )
 
     # Write data to CSV
-    File.write "priv/static/dhtdata.csv", "#{date},#{temp},#{humidity},#{distance}\n", [:append]
+    File.write "priv/static/dhtdata.csv", "#{date},#{temp},#{humidity}\n", [:append]
 
     temp = format_temp(temp)
     humidity = format_humidity(humidity)
-    distance = format_distance(distance)
 
     flash_rgb()
 
     RGBLCD.set_text(temp)
     RGBLCD.set_cursor(1, 0)
     RGBLCD.write_text(humidity)
-    Logger.info temp <> " " <> humidity <> " " <> distance
+    Logger.info temp <> " " <> humidity
 
     {:noreply, state}
   end
@@ -65,9 +63,5 @@ defmodule HomeWeatherPhx do
 
   defp format_humidity(humidity) do
     "Humidity: #{Float.to_string(humidity)}%"
-  end
-
-  defp format_distance(distance) do
-    "Humidity: #{Float.to_string(distance)}%"
   end
 end
