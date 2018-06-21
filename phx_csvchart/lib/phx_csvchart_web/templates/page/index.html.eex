@@ -117,7 +117,7 @@ var drawGraph = function(id, today, labels){
 };
 
 window.onload = function () {
-  var csvData = csvToArray("/home/pi/fukuokaex11/home_weather_csv/dhtdata.csv");
+  var csvData = csvToArray("../dhtdata.csv");
   //var today = "2016-12-12 ";
   //var yesterday = "2016-12-11 ";
   var today = getDate(0);
