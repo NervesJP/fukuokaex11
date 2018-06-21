@@ -1,0 +1,91 @@
+@charset "UTF-8";
+body {
+	background: #222;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+}
+.header {
+	text-align: center;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	background: #150D0F;
+	height: 40px;
+}
+.logo {
+	width: 400px;
+	font: 22px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #eee;
+	float: left;
+}
+.nav {
+	width: 100px;
+	height: 40px;
+	padding-top: 5px;
+	list-style-type: none;
+	text-align: center;
+	float: left;
+	overflow: hidden;
+}
+.nav a {
+	font: 20px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight: 700;
+	color: #ba9b89;
+	text-decoration: none;
+}
+.nav:hover {
+	background: #36281f;
+}
+.wrapper {
+	clear: left;
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 0;
+}
+.main {
+	width: 100%;
+	float: left;
+}
+h2 {
+	border-left: 10px solid #008c00;
+	color: #eee;
+	padding: 5px 20px;
+    font-size:18px;
+}
+.graph {
+	border: solid 1px #666;
+	background: #333;
+}
+.box {
+	width: 400px;
+	padding-right: 20px;
+	float: left;
+}
+
+/* スマホ用（画面サイズ450px以下） */
+
+@media screen and (max-width:450px) {
+    body {
+        font-size: 13px;
+    }
+    .logo {
+        width: 200px;
+        float: none;
+    }
+    .nav {
+        display: none;
+    }
+    .wrapper {
+        width: auto;
+        padding: 0 10px;
+    }
+    .main {
+        width: auto;
+        padding: 0;
+        border: none;
+    }
+
+    .main{
+        float: none;
+    }
+}
