@@ -8,6 +8,8 @@ defmodule HomeWeatherPhx do
 
   alias GrovePi.{RGBLCD, DHT}
 
+  @us_pin 4 # Use port 4 for Ultrasonic
+
   def start_link(pin) do
     GenServer.start_link(__MODULE__, pin)
   end
@@ -15,7 +17,7 @@ defmodule HomeWeatherPhx do
   def init(dht_pin) do
     state = %HomeWeatherPhx{dht: dht_pin}
 
-    {:ok, _pid} = GrovePi.Ultrasonic.start_link(4)
+    {:ok, _pid} = GrovePi.Ultrasonic.start_link(@us_pin)
 
     RGBLCD.initialize()
     RGBLCD.set_text("Ready!")
@@ -28,8 +30,8 @@ defmodule HomeWeatherPhx do
   end
 
   def handle_info({_pin, :changed, %{temp: temp, humidity: humidity}}, state) do
-    dis = GrovePi.Ultrasonic.read_distance(4)
-    distance = if dis == 200, do: 0, else: dis
+    # Measure distance
+    dis = GrovePi.Ultrasonic.read_distance(@us_pin)
     
     # Get date
     date = Timex.now("Asia/Tokyo")
