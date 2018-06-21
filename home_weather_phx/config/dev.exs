@@ -33,7 +33,7 @@ config :home_weather_phx, HomeWeatherPhxWeb.Endpoint,
 config :home_weather_phx, HomeWeatherPhxWeb.Endpoint,
   live_reload: [
     patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
+      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg|csv)$},
       ~r{priv/gettext/.*(po)$},
       ~r{lib/home_weather_phx_web/views/.*(ex)$},
       ~r{lib/home_weather_phx_web/templates/.*(eex)$}
