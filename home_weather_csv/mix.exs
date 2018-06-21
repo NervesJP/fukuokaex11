@@ -15,7 +15,7 @@ defmodule HomeWeatherCsv.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger],
+      extra_applications: [:logger, :timex],
       mod: {HomeWeatherDisplayCsv.Application, []}
     ]
   end
@@ -23,6 +23,7 @@ defmodule HomeWeatherCsv.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:timex, "~> 3.1"},
       {:grovepi, github: "adkron/grovepi", branch: "master"}
     ]
   end
