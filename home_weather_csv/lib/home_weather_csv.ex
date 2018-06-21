@@ -20,6 +20,7 @@ defmodule HomeWeatherDisplayCsv do
 
     # Write row headling of CSV
     File.write "dhtdata.csv", "date,temp,humidity\n"
+    File.write "dhtdata.csv", ""
 
     DHT.subscribe(dht_pin, :changed)
     {:ok, state}
