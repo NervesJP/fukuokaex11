@@ -33,7 +33,7 @@ defmodule HomeWeatherDisplayCsv do
       |> Timex.format!( "%Y-%m-%d %H:%M:%S", :strftime )
 
     # Write data to CSV
-    File.write "../dhtdata.csv", "#{date},#{temp},#{humidity}\n", [:append]
+    File.write "dhtdata.csv", "#{date},#{temp},#{humidity}\n", [:append]
     File.write "../phx_csvchart/priv/static/dhtdata.csv", "#{date},#{temp},#{humidity}\n", [:append]
 
     temp = format_temp(temp)
