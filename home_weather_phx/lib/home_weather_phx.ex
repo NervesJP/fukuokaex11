@@ -37,6 +37,7 @@ defmodule HomeWeatherPhx do
 
     temp = format_temp(temp)
     humidity = format_humidity(humidity)
+    distance = format_humidity(distance)
 
     flash_rgb()
 
@@ -64,5 +65,9 @@ defmodule HomeWeatherPhx do
 
   defp format_humidity(humidity) do
     "Humidity: #{Float.to_string(humidity)}%"
+  end
+
+  defp format_distance(distance) do
+    "Humidity: #{Float.to_string(distance)}%"
   end
 end
