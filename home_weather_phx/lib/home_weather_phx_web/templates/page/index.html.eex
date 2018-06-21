@@ -6,11 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-  <script language="JavaScript">
-  <!--
-  setTimeout("location.reload()",1000*3);
-  //-->
-  </scprit>
     <div class="wrapper">
       <div class="main">
         <div class="box">
@@ -27,6 +22,12 @@
 </html>
 
 <script>
+(function(){
+ var t = setInterval(function(){
+     location.reload(true);
+     }, 3000);
+ })();
+
 // CSV to Array 2D
 var csvToArray = function(path) {
   var csvData = new Array();
