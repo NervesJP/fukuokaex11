@@ -27,7 +27,7 @@ defmodule HomeWeatherPhx do
 
   def handle_info({_pin, :changed, %{temp: temp, humidity: humidity}}, state) do
     # Get distance
-    distance = Ultrasonic.read_distance(us_pin)
+    distance = Ultrasonic.read_distance(4)
     # Get date
     date = Timex.now("Asia/Tokyo")
       |> Timex.format!( "%Y-%m-%d %H:%M:%S", :strftime )
