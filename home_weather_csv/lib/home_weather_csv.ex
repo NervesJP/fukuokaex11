@@ -20,7 +20,7 @@ defmodule HomeWeatherDisplayCsv do
 
     # Create CSV file
     File.write "dhtdata.csv", ""
-    File.write "../phx_csvchart/priv/static/dhtdata.csv", ""
+    File.write "../home_weather_phx/priv/static/dhtdata.csv", ""
 
     DHT.subscribe(dht_pin, :changed)
     {:ok, state}
@@ -34,7 +34,7 @@ defmodule HomeWeatherDisplayCsv do
 
     # Write data to CSV
     File.write "dhtdata.csv", "#{date},#{temp},#{humidity}\n", [:append]
-    File.write "../phx_csvchart/priv/static/dhtdata.csv", "#{date},#{temp},#{humidity}\n", [:append]
+    File.write "../home_weather_phx/priv/static/dhtdata.csv", "#{date},#{temp},#{humidity}\n", [:append]
 
     temp = format_temp(temp)
     humidity = format_humidity(humidity)

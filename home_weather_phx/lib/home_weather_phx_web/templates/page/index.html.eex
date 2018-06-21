@@ -22,12 +22,6 @@
 </html>
 
 <script>
-(function(){
- var t = setInterval(function(){
-     location.reload(true);
-     }, 3000);
- })();
-
 // CSV to Array 2D
 var csvToArray = function(path) {
   var csvData = new Array();

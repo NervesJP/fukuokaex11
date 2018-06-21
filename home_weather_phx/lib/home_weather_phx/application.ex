@@ -18,10 +18,10 @@ defmodule HomeWeatherPhx.Application do
       # worker(HomeWeatherPhx.Worker, [arg1, arg2, arg3]),
 
       # Start the GrovePi sensor we want
-      worker(GrovePi.DHT, [@dht_pin, [poll_interval: @dht_poll_interval]]),
+      #worker(GrovePi.DHT, [@dht_pin, [poll_interval: @dht_poll_interval]]),
 
       # Start the main app
-      worker(HomeWeatherPhx, [@dht_pin]),
+      #worker(HomeWeatherPhx, [@dht_pin]),
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

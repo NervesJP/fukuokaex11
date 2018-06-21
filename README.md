@@ -12,12 +12,12 @@ Elixir/Phoenix projects for [fukuoka.ex#11](https://fukuokaex.connpass.com/event
 - [dht_sensor](./dht_sensor)
   - Print temparature and humidity values to IO
     - DHT for Port D7
-  - Run by `$ iex -S mix`
+  - Run by `$ MIX_ENV=prod iex -S mix`
 - [home_weather_display_host](./home_weather_display_host)
   - Display temparature and humidity values to LCD
     - DHT for Port D7
     - LCD for I2C-1
-  - Run by `$ iex -S mix`
+  - Run by `$ MIX_ENV=prod iex -S mix`
 - [home_weather_csv](./home_weather_csv)
   - Write temparature and humidity values to CSV (`dhtdata.csv`)
     - DHT for Port D7
@@ -26,7 +26,7 @@ Elixir/Phoenix projects for [fukuoka.ex#11](https://fukuokaex.connpass.com/event
 
 - [phx_chartjs](./phx_chartjs)
   - Chart.js example on phoenix
-  - Run by `$ mix phx.server`
+  - Run by `$ MIX_ENV=prod mix phx.server`
 
 
 ## References
