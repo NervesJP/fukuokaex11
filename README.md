@@ -22,11 +22,11 @@ Elixir/Phoenix projects for [fukuoka.ex#11](https://fukuokaex.connpass.com/event
   - Write temparature and humidity values to CSV (`dhtdata.csv`)
     - DHT for Port D7
     - LCD for I2C-1
-  - Run by `$ iex -S mix`
+  - Run by `$ MIX_ENV=prod iex -S mix`
 
 - [phx_chartjs](./phx_chartjs)
   - Chart.js example on phoenix
-  - Run by `$ MIX_ENV=prod mix phx.server`
+  - Run by `$ MIX_ENV=dev mix phx.server`
 
 
 ## References
