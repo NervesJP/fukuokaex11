@@ -37,7 +37,7 @@ defmodule HomeWeatherPhx do
 
     temp = format_temp(temp)
     humidity = format_humidity(humidity)
-    distance = format_humidity(distance)
+    distance = format_distance(distance)
 
     flash_rgb()
 
