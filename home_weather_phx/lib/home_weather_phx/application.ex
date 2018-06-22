@@ -3,7 +3,7 @@ defmodule HomeWeatherPhx.Application do
 
   # RGB LCD Screen should use the IC2-1 port
   @dht_pin 7 # Use port 7 for the DHT
-  @dht_poll_interval 3_000 # poll every 3 second
+  @dht_poll_interval 5_000 # poll every 5 second
 
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications

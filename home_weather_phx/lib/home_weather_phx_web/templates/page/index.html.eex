@@ -69,12 +69,20 @@ var replaceElement = function(array, before, after) {
   return array;
 }
 
+var toDoubleDigits = function(num) {
+  num += "";
+  if (num.length === 1) {
+    num = "0" + num;
+  }
+ return num;     
+};
+
 var getDate = function(day) {
   var date = new Date();
   date.setDate(date.getDate() + day);
   var year  = date.getFullYear();
-  var month = date.getMonth() + 1;
-  var day   = date.getDate();
+  var month = toDoubleDigits(date.getMonth() + 1);
+  var day   = toDoubleDigits(date.getDate());
   return String(year) + "-" + String(month) + "-" + String(day) + " ";
 }
 
@@ -142,9 +150,9 @@ var drawGraph = function(id, today, labels){
 
 window.onload = function () {
   var csvData = csvToArray("dhtdata.csv");
-  //var today = "2018-06-22 ";
+  var today = "2018-06-22 ";
   //var yesterday = "2016-12-11 ";
-  var today = getDate(0);
+  //var today = getDate(0);
   //var yesterday = getDate(-1);
   var dataToday = getDateData(today, csvData);
   var dataTodayT = arrayT(dataToday);
