@@ -10,16 +10,16 @@ Elixir/Phoenix projects for [fukuoka.ex#11](https://fukuokaex.connpass.com/event
   - [home_weather_display](./examples_on_grovepi/home_weather_display)
   - [led_fade](./examples_on_grovepi/led_fade)
 + 2: [dht_sensor](./dht_sensor)
-  - Print temparature and humidity values to IO
+  - Print temparature and humidity values to IO when value was change on 3s 
     - DHT for Port D7
   - Run by `$ MIX_ENV=prod iex -S mix`
 + 3: [home_weather_display_host](./home_weather_display_host)
-  - Display temparature and humidity values to LCD
+  - Display temparature and humidity values to LCD when value was change on 3s 
     - DHT for Port D7
     - LCD for I2C-1
   - Run by `$ MIX_ENV=prod iex -S mix`
 + 4: [home_weather_csv](./home_weather_csv)
-  - Write temparature and humidity values to CSV (`dhtdata.csv`)
+  - Write temparature and humidity values to CSV (`dhtdata.csv`) when value was change on 3s 
     - DHT for Port D7
     - LCD for I2C-1
   - Run by `$ MIX_ENV=prod iex -S mix`

@@ -4,7 +4,7 @@ defmodule DhtSensor do
 
   # Port on GrovePi+
   @dht_pin 7 # Use port 7 for the DHT
-  @dht_poll_interval 1_000 # poll every 1 second
+  @dht_poll_interval 3_000 # poll every 3 second
 
   def start(_type, _args) do
     import Supervisor.Spec, warn: false

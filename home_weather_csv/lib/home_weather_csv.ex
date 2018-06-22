@@ -28,7 +28,6 @@ defmodule HomeWeatherDisplayCsv do
 
   def handle_info({_pin, :changed, %{temp: temp, humidity: humidity}}, state) do
     # Get date
-    #date = DateTime.utc_now() |> DateTime.to_string()
     date = Timex.now("Asia/Tokyo")
       |> Timex.format!( "%Y-%m-%d %H:%M:%S", :strftime )
 
