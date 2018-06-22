@@ -73,6 +73,6 @@ iex(7)> DemoRGBLCD.set_cursor()
 ## [home_weather_display](./home_weather_display)
 
 This project cannot be built on rpi3 directly since it requires Nerves libs.  
-See [home_weather_display_host](../home_weather_display_host), I implemented this project to be able to build and run on the host (rpi3).
+See [../home_weather_display_host](../home_weather_display_host), I implemented this project to be able to build and run on the host (rpi3).
 
 
