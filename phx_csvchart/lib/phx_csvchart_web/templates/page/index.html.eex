@@ -138,9 +138,9 @@ var drawGraph = function(id, today, labels){
 
 window.onload = function () {
   var csvData = csvToArray("dhtdata.csv");
-  var today = "2018-06-21 ";
+  //var today = "2018-06-21 ";
   //var yesterday = "2016-12-11 ";
-  //var today = getDate(0);
+  var today = getDate(0);
   //var yesterday = getDate(-1);
   var dataToday = getDateData(today, csvData);
   var dataTodayT = arrayT(dataToday);
