@@ -32,7 +32,7 @@ defmodule HomeWeatherPhx do
   def handle_info({_pin, :changed, %{temp: temp, humidity: humidity}}, state) do
     # Measure distance
     distance = GrovePi.Ultrasonic.read_distance(@us_pin)
-    distance = if distance == 200, do: 0, else: distance
+    distance = if distance >= 200, do: 0, else: distance
     
     # Get date
     date = Timex.now("Asia/Tokyo")
