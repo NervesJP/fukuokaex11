@@ -31,11 +31,13 @@ Elixir/Phoenix projects for [fukuoka.ex#11](https://fukuokaex.connpass.com/event
   - Run by `$ MIX_ENV=dev mix phx.server`
     - Also run `home_weather_csv/` on another terminal.
 + 7: [home_weather_phx](./home_weather_phx)
-  - **Display temparature and humidity values on Phoenix Page!!**
-    - DHT for Port D7
-    - LCD for I2C-1
-  - Run by `$ MIX_ENV=dev iex -S mix`
-  - Then, access to `http://<IP>:4000/` to show the DHT value
+  - **Display temparature/humidity and ultrasonic distance values on Phoenix Page!!**
+    - [DHT](http://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/) for Port D7
+    - [Ultrasonic Ranger](http://wiki.seeedstudio.com/Grove-Ultrasonic_Ranger/) for Port D4
+    - [LCD](http://wiki.seeedstudio.com/Grove-LCD_RGB_Backlight/) for I2C-1
+  - Set today's date to L150 of `lib/home_weather_phx_web/templates/page/index.html.eex`
+  - Run by `$ MIX_ENV=dev mix phx.server`
+  - Then, access to `http://<IP>:4000/` to show the DHT & distance value
 
 
 
