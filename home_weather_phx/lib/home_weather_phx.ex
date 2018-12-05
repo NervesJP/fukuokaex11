@@ -38,12 +38,12 @@ defmodule HomeWeatherPhx do
     date = Timex.now("Asia/Tokyo")
       |> Timex.format!( "%Y-%m-%d %H:%M:%S", :strftime )
 
+    # Write data to CSV
+    File.write "priv/static/dhtdata.csv", "#{date},#{temp},#{humidity},#{distance}\n", [:append]
+
     temp = format_temp(temp)
     humidity = format_humidity(humidity)
     distance = format_distance(distance)
-
-    # Write data to CSV
-    File.write "priv/static/dhtdata.csv", "#{date},#{temp},#{humidity},#{distance}\n", [:append]
 
     flash_rgb()
 
