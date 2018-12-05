@@ -42,15 +42,15 @@ defmodule HomeWeatherPhx do
     humidity = format_humidity(humidity)
     distance = format_distance(distance)
 
+    # Write data to CSV
+    File.write "priv/static/dhtdata.csv", "#{date},#{temp},#{humidity},#{distance}\n", [:append]
+
     flash_rgb()
 
     RGBLCD.set_text(temp)
     RGBLCD.set_cursor(1, 0)
     RGBLCD.write_text(humidity)
     Logger.info temp <> " " <> humidity <> "" <> distance
-
-    # Write data to CSV
-    File.write "priv/static/dhtdata.csv", "#{date},#{temp},#{humidity},#{distance}\n", [:append]
 
     {:noreply, state}
   end
